@@ -2,11 +2,9 @@
 
 Web application (Flask based) that will maintain one or several device's data simulator while the app is running.
 
-Each device instance will work as an all-in-one state machine, and will send their data through MQTT every few seconds 
-also, each device can be controlled by an API.
+Each device instance will work as an all-in-one state machine, also, each device can be controlled by an API.
 
-The data from MQTT Topic (Raspberry Pi device) will be consumed by kafka connect to be sent to kafka whereas the data 
-produced by CPU will be directly produced to the kafka topic specified.
+The data produced by CPU will be directly produced to the kafka topic specified.
 
 All this data will be used to monitor the health of the devices and predict whether they will fail or not. This is 
 achieved thanks to the Federated Learning models developed.
@@ -74,9 +72,4 @@ pip install -r requirements.txt
 Run producer for CPU device
 ```shell
 python local_producer_cpu.py
-```
-
-Run Flask for Rasperry pi
-```shell
-flask --app flask_local_Rasperry.py run -h 0.0.0.0 -p 80
 ```
